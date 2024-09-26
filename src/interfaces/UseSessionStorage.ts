@@ -1,4 +1,4 @@
-import type { Locale } from '@interfaces';
+import type { Locale } from './Locale';
 
 export interface SessionStorageInput {
   key: string;

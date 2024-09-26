@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 
 import { getTimeZoneInfo } from '@helpers';
-import type { Input } from '@interfaces';
+import type { DateTimeFormattingOptions } from '@interfaces';
 import { useLocalizationContext } from '@providers';
 
 const useLocalizedInfo = () => {
@@ -24,7 +24,7 @@ const useLocalizedInfo = () => {
     return date;
   };
 
-  const displayDate = (props?: Partial<Input>) => {
+  const displayDate = (props?: Partial<DateTimeFormattingOptions>) => {
     const dateTime = !props?.date
       ? DateTime.now()
       : DateTime.fromISO(props?.date).setZone(
@@ -40,7 +40,7 @@ const useLocalizedInfo = () => {
       );
   };
 
-  const displayTime = (props?: Partial<Input>) => {
+  const displayTime = (props?: Partial<DateTimeFormattingOptions>) => {
     const dateTime = !props?.date
       ? DateTime.now()
       : DateTime.fromISO(props?.date).setZone(
